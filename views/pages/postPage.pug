@@ -1,0 +1,14 @@
+extends ../layouts/homepage.layout.pug
+block variables
+	-
+		var pageTitle = "homepage"
+block content
+	include ../components/article.mixin.pug
+	include ../components/pagination.mixin.pug
+	.post
+		h1.post--title #{post.title} #[span #[i.fas.fa-eye] (#{post.visits})]
+		h2.post--info #{post.info} #{moment(post.created_at).format("MMMM D, YYYY")}
+		img.mainImage(src='/'+post.image alt=post.title)
+		.content-text=post.content
+block sidebar
+	|tmp sidebar

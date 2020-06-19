@@ -1,0 +1,21 @@
+extends ../layouts/simple.layout.pug
+block variables
+block content
+  include ../components/article.mixin.pug
+  .container-lg
+    include ../components/manager.menu.pug
+    br
+    table.table.table-dark
+      thead
+        tr
+          th(scope='col') #
+          th(scope='col') Ім'я
+          th(scope='col') E-mail
+      tbody
+        each item, index in list
+          tr
+            th(scope='row')=index
+            td #{item.name}
+            td #{item.email}
+            td.text-right
+              button.btn.btn-danger(data-delete=item._id type='button' class='btn btn-danger') X

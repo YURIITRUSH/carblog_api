@@ -1,0 +1,28 @@
+-
+  var menu = [
+    {
+      title: 'Home',
+      link: '/'
+    },
+    {
+      title: 'Recipes',
+      link: 'recipes'
+    },
+    {
+      title: 'Article',
+      link: 'article'
+    },
+    {
+      title: 'Contact',
+      link: 'contact'
+    },
+    {
+      title: 'Purchase',
+      link: 'purchase'
+    }
+  ]
+nav.menu
+  ul
+    each item in menu
+     li
+      a(href=item.link)=item.title

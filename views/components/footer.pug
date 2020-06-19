@@ -1,0 +1,62 @@
+.footer
+  .wrapper
+    .row
+      .column.column-laptop-1-3
+        .footer-inner-column
+          .footer-title Keep in touch
+          .soclinks
+            a(href='https://facebook.com/' target='_blank')
+              <i class="fab fa-facebook-f"></i>
+            a(href='#')
+              <i class="fab fa-twitter"></i>
+            a(href='#')
+              <i class="fab fa-pinterest-p"></i>
+            a(href='#')
+              <i class="fab fa-google-plus-g"></i>
+            a(href='#')
+              <i class="fab fa-instagram"></i>
+      .column.column-laptop-1-3
+        .footer-inner-column
+          .footer-title Recent posts
+          each item in '123'
+            .small-post
+              .small-post--image
+                img(src='images/image.png' alt='recent post')
+              .small-post--text
+                .small-post--title Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                .small-post--info Yurii Trush
+      .column.column-laptop-1-3
+        .footer-inner-column
+          .footer-title Newsletter
+          include ../components/subscribe-form.pug
+.footer-nav
+  .wrapper
+    .copyrights @2019 Logwork. All Right Reserved.
+    -
+      var menu = [
+        {
+          title: 'Home',
+          link: '/'
+        },
+        {
+          title: 'Recipes',
+          link: 'recipes'
+        },
+        {
+          title: 'Article',
+          link: 'article'
+        },
+        {
+          title: 'Contact',
+          link: 'contact'
+        },
+        {
+          title: 'Purchase',
+          link: 'purchase'
+        }
+      ]
+    ul
+      each item in menu
+        li
+          a(href=item.link)=item.title
+include ./modals.pug

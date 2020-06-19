@@ -1,0 +1,16 @@
+block variables
+doctype html
+html(lang="uk")
+  head
+    title #{pageTitle}
+    meta(charset="utf-8")
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    link(rel="stylesheet" href="/css/bootstrap.min.css")
+    link(rel="stylesheet" href="/css/main.css")
+    <meta name="viewport" content="width=device-width">
+  body
+    block content
+    .alerts
+    script(src='/js/jquery-3.4.1.min.js')
+    script(src='/js/main.js')
+    script(src='/js/bootstrap.min.js')

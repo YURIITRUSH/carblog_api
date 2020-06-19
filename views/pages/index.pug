@@ -1,0 +1,14 @@
+extends ../layouts/homepage.layout.pug
+block variables
+	-
+		var pageTitle = "homepage"
+block content
+	include ../components/article.mixin.pug
+	include ../components/pagination.mixin.pug
+	-
+		 var articles = posts.docs
+	each article in articles
+		+article({}, article)
+	+pagination(posts)
+block sidebar
+	|tmp sidebar

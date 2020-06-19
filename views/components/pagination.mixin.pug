@@ -1,0 +1,42 @@
+mixin pagination(pagination)
+  if(pagination.totalPages > 1)
+    ul.pagination
+      li
+        -if(pagination.prevPage)
+          a(href='?page=' + pagination.prevPage + '&limit=' + pagination.limit)
+            |PrevPage
+        -else
+          span PrevPage
+      li
+        a(href='?page=1&limit=' + pagination.limit) 1
+      
+      if(pagination.totalPages > 7)
+        if(pagination.page > 3)
+          li
+            span ...
+        if(pagination.page > 2)
+          li
+            a(href='?page=' + ( pagintion.page - 1 ) + '&limit=' + pagination.limit)=( pagintion.page - 1 )
+        if(pagination.page < pagination.totalPages && pagination.page > 1)
+          li.is-active
+            a(href='?page=' + ( pagintion.page ) + '&limit=' + pagination.limit)=( pagintion.page )
+        if(pagination.page < pagination.totalPages - 1)
+          li
+            a(href='?page=' + ( pagintion.page + 1 ) + '&limit=' + pagination.limit)=( pagintion.page + 1 )
+        if(pagination.page < pagintion.totalPages - 2)
+          li
+            span ...
+      else
+        -var n = 2;
+        while n < pagination.totalPages
+          li
+            a(href='?page=' + n + '&limit=' + pagination.limit)=n++
+      
+      li
+        a(href='?page=' + pagination.totalPages + '&limit=' + pagination.limit)=pagination.totalPages
+      li
+        -if(pagination.nextPage)
+          a(href='?page=' + pagination.nextPage + '&limit=' + pagination.limit)
+            |NextPage
+        -else
+          span NextPage

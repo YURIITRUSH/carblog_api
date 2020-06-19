@@ -1,0 +1,22 @@
+-
+	var defaultArgs = {
+		title: "default title",
+		imgUrl: 'article.png',
+		tags: [
+		'Vehicle'
+		],
+		info: 'Yurii Trush - 22 April 2020',
+		intro: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel repellat voluptatibus magni ducimus fuga est, iste, voluptas quibusdam quas aperiam maxime praesentium delectus eius ad nobis error necessitatibus animi similique.'
+	}
+	var defaultTags = ['Vehicle']
+mixin article(tags = defaultTags, arguments = defaultArgs)
+	.article
+		.article--image
+			img(src=arguments.image alt=arguments.title)
+		.article--text
+			if(arguments.category)
+				.article--tags #{arguments.category}
+			br
+			a(href='/posts/'+arguments._id).article--title #{arguments.title}
+			.article--info #{arguments.info}
+			.article--intro #{arguments.intro}

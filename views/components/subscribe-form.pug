@@ -1,0 +1,9 @@
+form.form.subscriber(action='/subscribe' method='POST')
+  .form--field
+    input(type='text' name='name' placeholder='Your name')
+    .form--field-error(data-error='name')
+  .form--field
+    input(type='text' name='email' placeholder='Your email adress')
+    .form--field-error(data-error='email')
+  .form--submit
+    button Subscribe to newsletter

@@ -1,0 +1,27 @@
+extends ../layouts/simple.layout.pug
+block variables
+block content
+  .container-lg
+    include ../components/manager.menu.pug
+    br
+    table.table.table-dark
+      thead
+        tr
+          th(scope='col') #
+          th(scope='col') Заголовок
+          th(scope='col') Автор
+          th(scope='col') Картинка
+          th.text-center(scope='col') Редагувати
+          th.text-right(scope='col') Видалити
+      tbody
+        each post, index in posts
+          tr
+            th(scope='row')=index
+            td #{post.title}
+            td #{post.info}
+            td 
+              img(src=post.image alt=post.title width='100')
+            td.text-center
+              a(href='/manager/posts-edit/'+post._id).btn.btn-info(type='button') #
+            td.text-right
+              button.btn.btn-danger(data-delete=post._id data-path='subscribers' type='button') X
